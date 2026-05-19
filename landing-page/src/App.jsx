@@ -73,10 +73,10 @@ function App() {
         <Hero />
         <Features />
         <Showcase />
+        
         <Testimonial />
+        <Contact />
       </main>
-
-      <Contact />
     </div>
   );
 }

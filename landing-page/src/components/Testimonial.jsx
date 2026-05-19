@@ -30,17 +30,7 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-40 md:py-56 px-6 bg-white flex items-center justify-center relative overflow-hidden">
-      {/* Background Video */}
-      <video 
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260417_061226_74f0749c-a22d-42b3-895e-5d6203bc741c.mp4"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
- 
+    <section ref={sectionRef} className="py-40 md:py-56 px-6 bg-transparent flex items-center justify-center relative overflow-hidden">
       <div className="max-w-5xl mx-auto text-center relative z-10" ref={textRef}>
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight">
           <span className="text-ink-400">"Extruder completely transformed our workflow. </span>
