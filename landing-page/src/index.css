@@ -4,17 +4,29 @@
   --font-sans: "Quicksand", system-ui, sans-serif;
   --font-display: "Quicksand", system-ui, sans-serif;
 
-  --color-brand-500: #c8ff00;
-  --color-brand-600: #aadd00;
+  /* Brand accent — lime green matching hero CTA */
+  --color-brand-500: #84cc16;
+  --color-brand-600: #65a30d;
+
+  /* Light theme surface tokens */
+  --color-surface-0: #ffffff;
+  --color-surface-50: #f7f9f4;
+  --color-surface-100: #eef2e8;
+  --color-surface-200: #dde8d0;
+
+  /* Keep dark tokens for hero section which stays dark/cinematic */
   --color-dark-900: #0a0a0a;
   --color-dark-800: #141414;
-  --color-dark-700: #1a1a1a;
-  --color-dark-600: #262626;
+
+  /* Text tokens */
+  --color-ink-900: #111827;
+  --color-ink-600: #4b5563;
+  --color-ink-400: #9ca3af;
 }
 
 :root {
-  background-color: var(--color-dark-900);
-  color: #fff;
+  background-color: #ffffff;
+  color: #111827;
 }
 
 body {
@@ -24,19 +36,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom utilities */
+/* Glass panel — light version used in light sections */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Dark glass used inside the hero video overlay */
+.glass-panel-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text for light backgrounds */
 .text-gradient {
-  background: linear-gradient(to right, #fff, #a3a3a3);
+  background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Hero headline — stays white since it sits on the dark video */
+.text-gradient-hero {
+  background: linear-gradient(to right, #fff, #d1d5db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle elevation card for light sections */
+.card-light {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 /* Lenis Recommended CSS */

@@ -10,7 +10,6 @@ export default function Showcase() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Calculate how far to translate (total width of scroll container - viewport width)
       const getScrollAmount = () => {
         return -(scrollRef.current.scrollWidth - window.innerWidth);
       };
@@ -40,19 +39,19 @@ export default function Showcase() {
   ];
 
   return (
-    <section ref={containerRef} className="h-screen bg-dark-900 overflow-hidden flex items-center border-t border-white/5">
+    <section ref={containerRef} className="h-screen bg-white overflow-hidden flex items-center">
       <div ref={scrollRef} className="flex flex-nowrap h-full pt-20 pb-10 px-6 gap-6 w-max">
         <div className="w-[80vw] md:w-[40vw] flex-shrink-0 flex items-center justify-center">
-          <h2 className="text-6xl md:text-8xl font-display font-bold leading-none tracking-tight">
+          <h2 className="text-6xl md:text-8xl font-display font-bold leading-none tracking-tight text-ink-900">
             The <br/> Showcase.
           </h2>
         </div>
         
         {items.map((item) => (
-          <div key={item.id} className="w-[85vw] md:w-[50vw] h-full flex-shrink-0 relative rounded-3xl overflow-hidden bg-dark-800 border border-white/10 group cursor-pointer">
+          <div key={item.id} className="w-[85vw] md:w-[50vw] h-full flex-shrink-0 relative rounded-3xl overflow-hidden bg-white border border-black/8 group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500">
             <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/20 to-transparent"></div>
+            {/* Gradient overlay stays dark for readability on imagery */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             
             <div className="absolute bottom-10 left-10 z-10">
               <p className="text-brand-500 text-sm font-medium tracking-widest uppercase mb-2">{item.subtitle}</p>

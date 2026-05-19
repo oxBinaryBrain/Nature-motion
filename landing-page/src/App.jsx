@@ -52,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white font-sans selection:bg-brand-500 selection:text-dark-900">
+    <div className="min-h-screen bg-white text-ink-900 font-sans selection:bg-brand-500 selection:text-white">
       <Navbar />
       
       <main>
