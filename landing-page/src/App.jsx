@@ -31,6 +31,10 @@ function App() {
       smooth: true,
     });
 
+    // Force scroll to top on load/refresh
+    window.scrollTo(0, 0);
+    lenis.scrollTo(0, { immediate: true });
+
     // 2. Sync Lenis scroll with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
