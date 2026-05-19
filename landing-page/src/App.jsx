@@ -8,7 +8,6 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import Showcase from './components/Showcase';
 import Testimonial from './components/Testimonial';
-import Cta from './components/Cta';
 import Contact from './components/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,11 +22,12 @@ function App() {
 
     // 1. Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
+      autoRaf: false, // Turn off auto raf so we can drive it via GSAP ticker
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => 1 - Math.pow(1 - t, 4), // Smooth quartic out easing
       direction: 'vertical',
       gestureDirection: 'vertical',
-      smooth: true,
+      smoothWheel: true,
     });
 
     // Force scroll to top on load/refresh
@@ -47,10 +47,21 @@ function App() {
     // 4. Disable GSAP's lag smoothing to prevent conflicts with Lenis
     gsap.ticker.lagSmoothing(0);
 
+    // 5. Refresh ScrollTrigger once everything is mounted and loaded
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('load', handleLoad);
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+
     return () => {
       // Cleanup on unmount
       lenis.destroy();
       gsap.ticker.remove(updateLenis);
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -63,7 +74,6 @@ function App() {
         <Features />
         <Showcase />
         <Testimonial />
-        <Cta />
       </main>
 
       <Contact />

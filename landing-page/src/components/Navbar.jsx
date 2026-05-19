@@ -10,10 +10,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 px-6 py-6 transition-all duration-500 ${
+    <nav className={`fixed top-0 w-full z-50 px-6 transition-all duration-500 ${
       scrolled
-        ? 'bg-white/90 backdrop-blur-md border-b border-black/8 shadow-sm'
-        : 'bg-transparent'
+        ? 'py-3 bg-white/90 backdrop-blur-md border-b border-black/8 shadow-sm'
+        : 'py-5 bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className={`text-xl font-display font-bold tracking-tight transition-colors duration-500 ${scrolled ? 'text-ink-900' : 'text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]'}`}>

@@ -40,7 +40,7 @@ export default function Showcase() {
 
   return (
     <section ref={containerRef} className="h-screen bg-white overflow-hidden flex items-center">
-      <div ref={scrollRef} className="flex flex-nowrap h-full pt-20 pb-10 px-6 gap-6 w-max">
+      <div ref={scrollRef} className="flex flex-nowrap items-center h-full pt-20 pb-10 px-6 gap-6 w-max">
         <div className="w-[80vw] md:w-[40vw] flex-shrink-0 flex items-center justify-center">
           <h2 className="text-6xl md:text-8xl font-display font-bold leading-none tracking-tight text-ink-900">
             The <br/> Showcase.
@@ -48,7 +48,7 @@ export default function Showcase() {
         </div>
         
         {items.map((item) => (
-          <div key={item.id} className="w-[85vw] md:w-[50vw] h-full flex-shrink-0 relative rounded-3xl overflow-hidden bg-white border border-black/8 group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500">
+          <div key={item.id} className="w-[85vw] md:w-[50vw] h-[82%] flex-shrink-0 relative rounded-3xl overflow-hidden bg-white border border-black/8 group cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500">
             <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             {/* Gradient overlay stays dark for readability on imagery */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
