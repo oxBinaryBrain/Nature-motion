@@ -248,16 +248,16 @@ const CrowdCanvas = ({ src, rows = 15, cols = 7 }) => {
     };
   }, []);
   return (
-    <canvas ref={canvasRef} className="absolute bottom-0 h-[90vh] w-full" />
+    <canvas ref={canvasRef} className="absolute bottom-0 h-full w-full" />
   );
 };
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative h-screen w-full bg-white text-black overflow-hidden">
-      <div className="top-22 absolute left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black z-10 pt-22">
-        <span className="relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-white after:to-black after:content-['']">
-          Croud Canvas
+    <section id="contact" className="relative h-[65vh] w-full bg-transparent text-black overflow-hidden">
+      <div className="top-12 absolute left-1/2 grid -translate-x-1/2 content-start justify-items-center gap-6 text-center text-black z-10 pt-12">
+        <span className="relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-12 after:w-px after:bg-gradient-to-b after:from-white/0 after:to-black after:content-['']">
+          Crowd Canvas
         </span>
       </div>
       <div className="absolute bottom-0 h-full w-full">
