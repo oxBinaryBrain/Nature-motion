@@ -10,7 +10,6 @@ import Showcase from './components/Showcase';
 import Testimonial from './components/Testimonial';
 import Cta from './components/Cta';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +66,6 @@ function App() {
         <Cta />
       </main>
 
-      <Footer />
       <Contact />
     </div>
   );
